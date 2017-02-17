@@ -1,7 +1,13 @@
 <h1>Cocktails list :</h1>
 
+<%= link_to "Add a cocktail", new_cocktail_path %>
 <ul class = "list-unstyled">
   <% @cocktails.each do |cocktail| %>
-    <li><%= cocktail.name %> </li>
+    <li>
+      <%= cocktail.name %>
+      <%= link_to "Details", cocktail_path(cocktail) %>
+      <%= link_to "Delete", cocktail_path(cocktail), method: :delete %>
+    </li>
   <% end %>
 </ul>
+
