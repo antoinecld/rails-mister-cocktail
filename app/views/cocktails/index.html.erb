@@ -1,6 +1,10 @@
-<h1>Cocktails list :</h1>
+<div class="banner">
+  <div class="banner-content">
+    <h1>Cocktail</h1>
+    <div> <%= link_to "Add a cocktail", new_cocktail_path , {class: "btn btn-treehouse"} %> </div>
+  </div>
+</div>
 
-<%= link_to "Add a cocktail", new_cocktail_path , {class: "btn btn-primary"} %>
 
 <div class="container">
   <div class="row">
@@ -9,14 +13,21 @@
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=cocktail.photo%>);">
         <h3><%= cocktail.name %></h3>
         <p><%= link_to '', cocktail_path(cocktail), class:"card-link" %></p>
-          <%= link_to cocktail_path(cocktail) do %>
-            <i class="fa fa-trash-o" aria-hidden="true"></i>
-          <% end %>
         </div>
+
+        <ul class="list-unstyled">
+          <%= link_to cocktail_path(cocktail), method: :delete do %>
+          <li>
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </li>
+        </ul>
+
+        <% end %>
       </div>
     <% end %>
   </div>
 </div>
+
 
 
 
