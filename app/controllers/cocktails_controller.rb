@@ -14,7 +14,6 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    raise
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
