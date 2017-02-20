@@ -14,11 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
-
-//= require cloudinary/jquery.cloudinary
 //= require_tree .
-
-
-$(document).ready(function() {
-  $('.attachinary-input').attachinary();
-});
